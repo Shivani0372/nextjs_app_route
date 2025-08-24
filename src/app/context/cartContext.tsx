@@ -6,7 +6,7 @@ import { createContext, useContext, useState, ReactNode } from "react";
 export type Product = {
   id: number;
   name: string;
-  price: number;
+  price: string;
   description: string;
   image: string;
 };
