@@ -14,17 +14,19 @@ export default function ProductListPage() {
 
   return (
     <div className="row">
-      {products.map(product => (
+      {products.map((product) => (
         <div key={product.id} className="col-md-4 mb-4">
-          <div className="card h-100 shadow-sm">
+          <div className="card h-100 shadow-sm d-flex flex-column">
             <img src={product.image} className="card-img-top" style={{ maxHeight: 200, objectFit: "cover" }} alt={product.name} />
             <div className="card-body d-flex flex-column">
               <h5 className="card-title">{product.name}</h5>
               <p className="text-success">₹{product.price.toLocaleString()}</p>
               <p className="card-text">{product.description}</p>
               <div className="mt-auto d-flex justify-content-between">
-                {/* <Link href={`/products/${product.id}`} className="btn btn-outline-primary">View</Link> */}
-                <button onClick={() => addToCart({ ...product, quantity: 1 })} className="btn btn-success">Add to Cart</button>
+                <Link href={`/products/${product.id}`} className="btn btn-outline-primary">View</Link>
+                <button onClick={() => addToCart({ ...product, quantity: 1 })} className="btn btn-success">
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
